@@ -6,6 +6,12 @@ __pycache__/
 # C extensions
 *.so
 
+
+# local folder
+.dagster/
+data/
+
+
 # dagster temp files
 .dagster
 

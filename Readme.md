@@ -2,7 +2,14 @@
 
 DAGSTER_HOME=$(pwd)/.dagster dagster-daemon run
 
-DAGSTER_HOME=$(pwd)/.dagster dagit -f repository.py
+DAGSTER_HOME=$(pwd)/.dagster dagit -f ./pipelines/repository.py
+
+
+
+
+
+# DAGSTER_HOME=$(pwd)/.dagster dagit -f repository.py
+
 
 
 

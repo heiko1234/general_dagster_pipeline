@@ -1,4 +1,5 @@
 from lib2to3.pytree import Base
+from operator import sub
 import os
 import io
 from pathlib import Path
@@ -164,10 +165,10 @@ def read_csv_file(container_name="azuriteblob", blob="targetfolder", file=".csv"
 
 def upload_data_to_blob(df, container_name, subcontainer_name, filename, filetype="parquet"):
 
-
     relativ_filepath = f"./data/{subcontainer_name}/{filename}.{filetype}"
     file = Path(relativ_filepath)
-    dir_to_create = file.parquet
+    file
+    dir_to_create = file.parent
     os.makedirs(dir_to_create, exist_ok=True)
 
     if filetype == "parquet":
@@ -183,6 +184,10 @@ def upload_data_to_blob(df, container_name, subcontainer_name, filename, filetyp
         .get_container_client()
         .get_blob_client(blob=blob_str)
         )
+
+    print(os.path.isfile(file))
+    
+    file.open("rb")
     
     with file.open("rb") as data:
         client.upload_blob(data, overwrite=True)
@@ -192,7 +197,6 @@ def upload_data_to_blob(df, container_name, subcontainer_name, filename, filetyp
     # remove temporar file path
     Path(relativ_filepath).unlink()
     print(f"successfully deleted local file: {file}")
-
 
 
 

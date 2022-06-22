@@ -29,13 +29,15 @@ def load_coinbase_data(context):
 
     data = public_candles(product_id=product_id, start=None, end= None, granularity=granularity, localtime=True)
 
+    # data=pd.DataFrame(data=[["2022-05-20", 2, 10, 5, 8, 1000]], columns=["time", "low", "high", "open", "close", "volume"])
+
     context.log.info(f"data: {data.head()}")
 
     return data
 
 
 @op()
-def upload_data_to_blob(context, df):
+def upload_data_to_blob_context(context, df):
 
     containername = context.op_config["blob_container"]
     context.log.info(f"containername: {containername}")
@@ -48,6 +50,9 @@ def upload_data_to_blob(context, df):
 
     file_name = filename.split(".")[0]
     file_type = filename.split(".")[1]
+
+    context.log.info(f"file_name: {file_name}")
+    context.log.info(f"file_type: {file_type}")
 
     upload_data_to_blob(df=df, 
         container_name=containername, 

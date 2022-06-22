@@ -40,6 +40,8 @@ def public_candles(product_id="ETH-EUR", start=None, end= None, granularity=None
 
     req_url = (f"/products/{product_id}/candles")
 
+    granularity = granularity*60  # to be in min
+
     url_extension = "?"
 
     if granularity is not None:

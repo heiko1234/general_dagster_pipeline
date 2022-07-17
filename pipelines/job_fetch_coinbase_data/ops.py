@@ -15,8 +15,6 @@ from pipelines.general.resources import (
 )
 
 
-
-
 @op()
 def load_coinbase_data(context):
 

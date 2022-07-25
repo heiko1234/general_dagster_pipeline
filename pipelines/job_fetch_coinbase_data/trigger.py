@@ -32,7 +32,7 @@ def trigger_fetch_coinbase_data_execution(context: ScheduleEvaluationContext):
                             "granularity": 15
                         }
                     },
-                "upload_data_to_blob":
+                "upload_data_to_blob_context":
                     {"config":
                         {
                             "blob_container": "coinbasedata",

@@ -1,0 +1,15 @@
+
+
+blob_container: "sklearn"
+
+source_subcontainer: ""
+
+target_subcontainer: ""
+
+file_name: "aggregated.parquet"
+
+
+
+
+
+

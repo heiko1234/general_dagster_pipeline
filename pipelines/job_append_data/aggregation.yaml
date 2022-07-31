@@ -1,12 +1,13 @@
 
 
-blob_container: "sklearn"
+blob_container: "coinbasedata"
 
-source_subcontainer: ""
+source_subcontainer: "datadownload"
+source_file_name: "rawdata.parquet"
 
-target_subcontainer: ""
+target_subcontainer: "coinbasedata"
 
-file_name: "aggregated.parquet"
+target_file_name: "coinbase_data.parquet"
 
 
 

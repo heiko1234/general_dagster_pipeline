@@ -30,6 +30,7 @@ def load_coinbase_data(context):
     # data=pd.DataFrame(data=[["2022-05-20", 2, 10, 5, 8, 1000]], columns=["time", "low", "high", "open", "close", "volume"])
 
     context.log.info(f"data: {data.head()}")
+    context.log.info(f"data: {data.tail()}")
 
     return data
 

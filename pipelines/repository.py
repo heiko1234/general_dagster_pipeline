@@ -10,6 +10,12 @@ from pipelines.job_fetch_coinbase_data.job import (
 from pipelines.job_fetch_coinbase_data.trigger import (
     trigger_fetch_coinbase_data_execution
 )
+from pipelines.job_append_data.job import (
+    job_data_aggregation
+)
+from pipelines.job_append_data.trigger import (
+    sensor_data_aggregation
+)
 
 
 @repository
@@ -19,7 +25,9 @@ def data_pipeline():
 
     return [
         job_fetch_coinbase_data,
-        trigger_fetch_coinbase_data_execution
+        trigger_fetch_coinbase_data_execution,
+        job_data_aggregation,
+        sensor_data_aggregation
     ]
 
 

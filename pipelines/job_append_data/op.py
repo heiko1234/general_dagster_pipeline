@@ -43,6 +43,10 @@ def load_file_from_blobstorage(context, container_name, sub_container, file_name
 
     df = pd.read_parquet(pq_file)
 
+    context.log.info(f"df: {df.head()}")
+
+    return df
+
 
 
 @op(ins={"container_name": In(dagster_type=str),
@@ -55,6 +59,7 @@ def append_blob_data(context, df, container_name, sub_container, file_name):
     context.log.info(f"subcontainer: {sub_container}")
     context.log.info(f"filename: {file_name}")
     context.log.info(f"df: {df.head()}")
+    context.log.info(f"df: {df.tail()}")
 
     strblobpath = f"{sub_container}/{file_name}"
     context.log.info(f"filepath on blob: {strblobpath}")

@@ -29,7 +29,7 @@ def trigger_fetch_coinbase_data_execution(context: ScheduleEvaluationContext):
                     {"config": 
                         {
                             "product_id": "ETH-EUR",
-                            "granularity": 15
+                            "granularity": 15   #Min
                         }
                     },
                 "upload_data_to_blob_context":
